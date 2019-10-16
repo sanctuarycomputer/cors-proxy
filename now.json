@@ -1,0 +1,11 @@
+{
+  "name": "sanctucompu-cors-proxy",
+  "alias": "sanctucompu-cors-proxy",
+  "version": 2,
+  "builds": [
+      { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+      { "src": "/(.*)", "dest": "/index.js" }
+  ]
+}
