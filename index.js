@@ -4,6 +4,7 @@ const URL = require("url");
 module.exports = async function (req, res) {
   let proxyable = (req.url || "");
   if (proxyable.charAt(0) === "/") proxyable = proxyable.substr(1);
+  if (!proxyable.startsWith('http')) proxyable = `https://${proxyable}`;
 
   if (!URL.parse(proxyable).host) {
     if (req.headers.referer) {
